@@ -1,13 +1,10 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+import type { GatsbyConfig } from "gatsby"
+import { MarkdownRemarkConnection, QuerySiteArgs } from "./gatsby-graphql";
 
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Bromise`,
     author: {
@@ -18,6 +15,12 @@ module.exports = {
     siteUrl: `https://bromise.github.io`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./gatsby-graphql.ts`,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -72,13 +75,18 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({ query: { site, allMarkdownRemark } }: {
+              query: {
+                site: QuerySiteArgs;
+                allMarkdownRemark: MarkdownRemarkConnection;
+              }
+            }) => {
               return allMarkdownRemark.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  date: node.frontmatter?.date,
+                  url: site.siteMetadata?.siteUrl || '' + node.fields?.slug,
+                  guid: site.siteMetadata?.siteUrl || '' + node.fields?.slug,
                   custom_elements: [{ 'content:encoded': node.html }],
                 });
               });
@@ -120,3 +128,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;
