@@ -1,9 +1,6 @@
-import type { GatsbyConfig } from "gatsby"
-import { MarkdownRemarkConnection, QuerySiteArgs } from "./gatsby-graphql";
+import type { GatsbyConfig } from 'gatsby';
+import type { MarkdownRemarkConnection, Site } from './gatsby-graphql';
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Bromise`,
@@ -75,11 +72,13 @@ const config: GatsbyConfig = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }: {
+            serialize: ({
+              query: { site, allMarkdownRemark },
+            }: {
               query: {
-                site: QuerySiteArgs;
+                site: Site;
                 allMarkdownRemark: MarkdownRemarkConnection;
-              }
+              };
             }) => {
               return allMarkdownRemark.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {

@@ -1,21 +1,28 @@
-import * as React from 'react';
-import { Link, graphql } from 'gatsby';
-
+import React from 'react';
+import { graphql, HeadProps, Link, PageProps } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import type { MarkdownRemark, Site } from '../../gatsby-graphql';
 
-const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`;
+type DataProps = {
+  previous: MarkdownRemark;
+  next: MarkdownRemark;
+  site: Site;
+  markdownRemark: MarkdownRemark;
+};
+
+const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }: PageProps<DataProps>) => {
+  const siteTitle = site?.siteMetadata?.title || `Title`;
 
   return (
     <Layout location={location} title={siteTitle}>
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1 itemProp="headline">{post.frontmatter?.title}</h1>
+          <p>{post.frontmatter?.date}</p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
+        <section dangerouslySetInnerHTML={{ __html: post.html || '' }} itemProp="articleBody" />
         <hr />
         <footer>
           <Bio />
@@ -33,15 +40,15 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous.fields?.slug || ''} rel="prev">
+                ← {previous.frontmatter?.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next.fields?.slug || ''} rel="next">
+                {next.frontmatter?.title} →
               </Link>
             )}
           </li>
@@ -51,8 +58,10 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
   );
 };
 
-export const Head = ({ data: { markdownRemark: post } }) => {
-  return <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />;
+export const Head = ({ data: { markdownRemark: post } }: HeadProps<DataProps>) => {
+  return (
+    <Seo title={post.frontmatter?.title || ''} description={post.frontmatter?.description || post.excerpt || ''} />
+  );
 };
 
 export default BlogPostTemplate;

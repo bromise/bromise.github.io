@@ -1,9 +1,14 @@
-import * as React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Link } from 'gatsby';
 
-const Layout = ({ location, title, children }) => {
+type Props = PropsWithChildren<{
+  title: string;
+  location: Location;
+}>;
+
+const Layout = ({ location, title, children }: Props) => {
   const rootPath = `${__PATH_PREFIX__}/`;
-  const isRootPath = location.pathname === rootPath;
+  const isRootPath = location?.pathname === rootPath;
   let header;
 
   if (isRootPath) {

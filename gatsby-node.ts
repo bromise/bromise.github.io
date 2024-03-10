@@ -1,10 +1,10 @@
-import type { GatsbyNode } from "gatsby"
-import path from "path"
-import { createFilePath } from "gatsby-source-filesystem"
-import { Query } from "./gatsby-graphql";
+import type { GatsbyNode } from 'gatsby';
+import path from 'path';
+import { createFilePath } from 'gatsby-source-filesystem';
+import { Query } from './gatsby-graphql';
 
 // Define the template for blog post
-const blogPost = path.resolve(`./src/templates/blog-post.js`);
+const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
@@ -28,7 +28,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     return;
   }
 
-  const posts = result?.data?.allMarkdownRemark.nodes;
+  const posts = result?.data?.allMarkdownRemark?.nodes || [];
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -40,7 +40,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id;
 
       createPage({
-        path: String(post.fields?.slug),
+        path: post.fields?.slug || '',
         component: blogPost,
         context: {
           id: post.id,

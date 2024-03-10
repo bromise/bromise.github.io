@@ -5,10 +5,16 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { PropsWithChildren } from 'react';
 
-const Seo = ({ description, title, children }) => {
+type Props = PropsWithChildren<{
+  title: string;
+  description?: string;
+}>;
+
+const Seo = ({ description, title, children }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,8 +31,8 @@ const Seo = ({ description, title, children }) => {
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const metaDescription = description || site?.siteMetadata?.description;
+  const defaultTitle = site?.siteMetadata?.title;
 
   return (
     <>
