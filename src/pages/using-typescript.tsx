@@ -37,7 +37,7 @@ export const Head: HeadFC<DataProps> = () => <Seo title="Using TypeScript" />;
 export default UsingTypescript;
 
 export const query = graphql`
-  {
+  query getUsingTypescriptPage {
     site {
       buildTime(formatString: "YYYY-MM-DD hh:mm a z")
     }

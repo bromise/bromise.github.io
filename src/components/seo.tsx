@@ -17,7 +17,7 @@ type Props = PropsWithChildren<{
 const Seo = ({ description, title, children }: Props) => {
   const { site } = useStaticQuery(
     graphql`
-      query {
+      query getSeo {
         site {
           siteMetadata {
             title

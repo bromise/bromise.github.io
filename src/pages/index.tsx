@@ -74,7 +74,7 @@ export default BlogIndex;
 export const Head = () => <Seo title="All posts" />;
 
 export const pageQuery = graphql`
-  {
+  query getBlogIndex {
     site {
       siteMetadata {
         title

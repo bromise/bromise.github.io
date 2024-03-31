@@ -74,12 +74,14 @@ export type File = Node & {
   internal: Internal;
 };
 
+
 export type FileModifiedTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type FileAccessTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -88,12 +90,14 @@ export type FileAccessTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type FileChangeTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type FileBirthTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -102,6 +106,7 @@ export type FileBirthTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type FileAtimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
@@ -109,12 +114,14 @@ export type FileAtimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type FileMtimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type FileCtimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -183,12 +190,14 @@ export type Directory = Node & {
   internal: Internal;
 };
 
+
 export type DirectoryModifiedTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type DirectoryAccessTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -197,12 +206,14 @@ export type DirectoryAccessTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type DirectoryChangeTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type DirectoryBirthTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -211,6 +222,7 @@ export type DirectoryBirthTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type DirectoryAtimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
@@ -218,12 +230,14 @@ export type DirectoryAtimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
+
 export type DirectoryMtimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
 };
+
 
 export type DirectoryCtimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -247,6 +261,7 @@ export type Site = Node & {
   children: Array<Node>;
   internal: Internal;
 };
+
 
 export type SiteBuildTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
@@ -315,6 +330,7 @@ export type SiteBuildMetadata = Node & {
   internal: Internal;
 };
 
+
 export type SiteBuildMetadataBuildTimeArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
@@ -322,11 +338,24 @@ export type SiteBuildMetadataBuildTimeArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
-export type GatsbyImageFormat = 'NO_CHANGE' | 'AUTO' | 'JPG' | 'PNG' | 'WEBP' | 'AVIF';
+export type GatsbyImageFormat =
+  | 'NO_CHANGE'
+  | 'AUTO'
+  | 'JPG'
+  | 'PNG'
+  | 'WEBP'
+  | 'AVIF';
 
-export type GatsbyImageLayout = 'FIXED' | 'FULL_WIDTH' | 'CONSTRAINED';
+export type GatsbyImageLayout =
+  | 'FIXED'
+  | 'FULL_WIDTH'
+  | 'CONSTRAINED';
 
-export type GatsbyImagePlaceholder = 'DOMINANT_COLOR' | 'TRACED_SVG' | 'BLURRED' | 'NONE';
+export type GatsbyImagePlaceholder =
+  | 'DOMINANT_COLOR'
+  | 'TRACED_SVG'
+  | 'BLURRED'
+  | 'NONE';
 
 export type MarkdownHeading = {
   id?: Maybe<Scalars['String']>;
@@ -334,9 +363,18 @@ export type MarkdownHeading = {
   depth?: Maybe<Scalars['Int']>;
 };
 
-export type MarkdownHeadingLevels = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type MarkdownHeadingLevels =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6';
 
-export type MarkdownExcerptFormats = 'PLAIN' | 'HTML' | 'MARKDOWN';
+export type MarkdownExcerptFormats =
+  | 'PLAIN'
+  | 'HTML'
+  | 'MARKDOWN';
 
 export type MarkdownWordCount = {
   paragraphs?: Maybe<Scalars['Int']>;
@@ -363,20 +401,24 @@ export type MarkdownRemark = Node & {
   internal: Internal;
 };
 
+
 export type MarkdownRemarkExcerptArgs = {
   pruneLength?: InputMaybe<Scalars['Int']>;
   truncate?: InputMaybe<Scalars['Boolean']>;
   format?: InputMaybe<MarkdownExcerptFormats>;
 };
 
+
 export type MarkdownRemarkExcerptAstArgs = {
   pruneLength?: InputMaybe<Scalars['Int']>;
   truncate?: InputMaybe<Scalars['Boolean']>;
 };
 
+
 export type MarkdownRemarkHeadingsArgs = {
   depth?: InputMaybe<MarkdownHeadingLevels>;
 };
+
 
 export type MarkdownRemarkTableOfContentsArgs = {
   absolute?: InputMaybe<Scalars['Boolean']>;
@@ -385,11 +427,25 @@ export type MarkdownRemarkTableOfContentsArgs = {
   heading?: InputMaybe<Scalars['String']>;
 };
 
-export type ImageFormat = 'NO_CHANGE' | 'AUTO' | 'JPG' | 'PNG' | 'WEBP' | 'AVIF';
+export type ImageFormat =
+  | 'NO_CHANGE'
+  | 'AUTO'
+  | 'JPG'
+  | 'PNG'
+  | 'WEBP'
+  | 'AVIF';
 
-export type ImageFit = 'COVER' | 'CONTAIN' | 'FILL' | 'INSIDE' | 'OUTSIDE';
+export type ImageFit =
+  | 'COVER'
+  | 'CONTAIN'
+  | 'FILL'
+  | 'INSIDE'
+  | 'OUTSIDE';
 
-export type ImageLayout = 'FIXED' | 'FULL_WIDTH' | 'CONSTRAINED';
+export type ImageLayout =
+  | 'FIXED'
+  | 'FULL_WIDTH'
+  | 'CONSTRAINED';
 
 export type ImageCropFocus =
   | 'CENTER'
@@ -442,6 +498,7 @@ export type ImageSharp = Node & {
   internal: Internal;
 };
 
+
 export type ImageSharpFixedArgs = {
   width?: InputMaybe<Scalars['Int']>;
   height?: InputMaybe<Scalars['Int']>;
@@ -463,6 +520,7 @@ export type ImageSharpFixedArgs = {
   rotate?: InputMaybe<Scalars['Int']>;
   trim?: InputMaybe<Scalars['Float']>;
 };
+
 
 export type ImageSharpFluidArgs = {
   maxWidth?: InputMaybe<Scalars['Int']>;
@@ -488,6 +546,7 @@ export type ImageSharpFluidArgs = {
   srcSetBreakpoints?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
 };
 
+
 export type ImageSharpGatsbyImageDataArgs = {
   layout?: InputMaybe<ImageLayout>;
   width?: InputMaybe<Scalars['Int']>;
@@ -508,6 +567,7 @@ export type ImageSharpGatsbyImageDataArgs = {
   transformOptions?: InputMaybe<TransformOptions>;
   backgroundColor?: InputMaybe<Scalars['String']>;
 };
+
 
 export type ImageSharpResizeArgs = {
   width?: InputMaybe<Scalars['Int']>;
@@ -559,7 +619,11 @@ export type ImageSharpFluid = {
   presentationHeight: Scalars['Int'];
 };
 
-export type ImagePlaceholder = 'DOMINANT_COLOR' | 'TRACED_SVG' | 'BLURRED' | 'NONE';
+export type ImagePlaceholder =
+  | 'DOMINANT_COLOR'
+  | 'TRACED_SVG'
+  | 'BLURRED'
+  | 'NONE';
 
 export type BlurredOptions = {
   /** Width of the generated low-res preview. Default is 20px */
@@ -627,6 +691,7 @@ export type Frontmatter = {
   date?: Maybe<Scalars['Date']>;
 };
 
+
 export type FrontmatterDateArgs = {
   formatString?: InputMaybe<Scalars['String']>;
   fromNow?: InputMaybe<Scalars['Boolean']>;
@@ -658,6 +723,7 @@ export type Query = {
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
 };
+
 
 export type QueryFileArgs = {
   sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
@@ -704,12 +770,14 @@ export type QueryFileArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllFileArgs = {
   filter?: InputMaybe<FileFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<FileSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QueryDirectoryArgs = {
   sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
@@ -749,12 +817,14 @@ export type QueryDirectoryArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllDirectoryArgs = {
   filter?: InputMaybe<DirectoryFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<DirectorySortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
@@ -772,12 +842,14 @@ export type QuerySiteArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSiteArgs = {
   filter?: InputMaybe<SiteFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<SiteSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QuerySiteFunctionArgs = {
   functionRoute?: InputMaybe<StringQueryOperatorInput>;
@@ -793,12 +865,14 @@ export type QuerySiteFunctionArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSiteFunctionArgs = {
   filter?: InputMaybe<SiteFunctionFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<SiteFunctionSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QuerySitePageArgs = {
   path?: InputMaybe<StringQueryOperatorInput>;
@@ -814,12 +888,14 @@ export type QuerySitePageArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSitePageArgs = {
   filter?: InputMaybe<SitePageFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<SitePageSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QuerySitePluginArgs = {
   resolve?: InputMaybe<StringQueryOperatorInput>;
@@ -837,12 +913,14 @@ export type QuerySitePluginArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSitePluginArgs = {
   filter?: InputMaybe<SitePluginFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<SitePluginSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QuerySiteBuildMetadataArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
@@ -852,12 +930,14 @@ export type QuerySiteBuildMetadataArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSiteBuildMetadataArgs = {
   filter?: InputMaybe<SiteBuildMetadataFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<SiteBuildMetadataSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QueryMarkdownRemarkArgs = {
   id?: InputMaybe<StringQueryOperatorInput>;
@@ -878,12 +958,14 @@ export type QueryMarkdownRemarkArgs = {
   internal?: InputMaybe<InternalFilterInput>;
 };
 
+
 export type QueryAllMarkdownRemarkArgs = {
   filter?: InputMaybe<MarkdownRemarkFilterInput>;
   sort?: InputMaybe<Array<InputMaybe<MarkdownRemarkSortInput>>>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QueryImageSharpArgs = {
   fixed?: InputMaybe<ImageSharpFixedFilterInput>;
@@ -896,6 +978,7 @@ export type QueryImageSharpArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   internal?: InputMaybe<InternalFilterInput>;
 };
+
 
 export type QueryAllImageSharpArgs = {
   filter?: InputMaybe<ImageSharpFilterInput>;
@@ -1112,21 +1195,26 @@ export type FileConnection = {
   group: Array<FileGroupConnection>;
 };
 
+
 export type FileConnectionDistinctArgs = {
   field: FileFieldSelector;
 };
+
 
 export type FileConnectionMaxArgs = {
   field: FileFieldSelector;
 };
 
+
 export type FileConnectionMinArgs = {
   field: FileFieldSelector;
 };
 
+
 export type FileConnectionSumArgs = {
   field: FileFieldSelector;
 };
+
 
 export type FileConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1195,7 +1283,8 @@ export type FileFieldSelector = {
   internal?: InputMaybe<InternalFieldSelector>;
 };
 
-export type FieldSelectorEnum = 'SELECT';
+export type FieldSelectorEnum =
+  | 'SELECT';
 
 export type MarkdownRemarkFieldSelector = {
   id?: InputMaybe<FieldSelectorEnum>;
@@ -1326,21 +1415,26 @@ export type FileGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type FileGroupConnectionDistinctArgs = {
   field: FileFieldSelector;
 };
+
 
 export type FileGroupConnectionMaxArgs = {
   field: FileFieldSelector;
 };
 
+
 export type FileGroupConnectionMinArgs = {
   field: FileFieldSelector;
 };
 
+
 export type FileGroupConnectionSumArgs = {
   field: FileFieldSelector;
 };
+
 
 export type FileGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1438,7 +1532,9 @@ export type FileSortInput = {
   internal?: InputMaybe<InternalSortInput>;
 };
 
-export type SortOrderEnum = 'ASC' | 'DESC';
+export type SortOrderEnum =
+  | 'ASC'
+  | 'DESC';
 
 export type MarkdownRemarkSortInput = {
   id?: InputMaybe<SortOrderEnum>;
@@ -1567,21 +1663,26 @@ export type DirectoryConnection = {
   group: Array<DirectoryGroupConnection>;
 };
 
+
 export type DirectoryConnectionDistinctArgs = {
   field: DirectoryFieldSelector;
 };
+
 
 export type DirectoryConnectionMaxArgs = {
   field: DirectoryFieldSelector;
 };
 
+
 export type DirectoryConnectionMinArgs = {
   field: DirectoryFieldSelector;
 };
 
+
 export type DirectoryConnectionSumArgs = {
   field: DirectoryFieldSelector;
 };
+
 
 export type DirectoryConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1647,21 +1748,26 @@ export type DirectoryGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryGroupConnectionDistinctArgs = {
   field: DirectoryFieldSelector;
 };
+
 
 export type DirectoryGroupConnectionMaxArgs = {
   field: DirectoryFieldSelector;
 };
 
+
 export type DirectoryGroupConnectionMinArgs = {
   field: DirectoryFieldSelector;
 };
 
+
 export type DirectoryGroupConnectionSumArgs = {
   field: DirectoryFieldSelector;
 };
+
 
 export type DirectoryGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1774,21 +1880,26 @@ export type SiteConnection = {
   group: Array<SiteGroupConnection>;
 };
 
+
 export type SiteConnectionDistinctArgs = {
   field: SiteFieldSelector;
 };
+
 
 export type SiteConnectionMaxArgs = {
   field: SiteFieldSelector;
 };
 
+
 export type SiteConnectionMinArgs = {
   field: SiteFieldSelector;
 };
 
+
 export type SiteConnectionSumArgs = {
   field: SiteFieldSelector;
 };
+
 
 export type SiteConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1849,21 +1960,26 @@ export type SiteGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type SiteGroupConnectionDistinctArgs = {
   field: SiteFieldSelector;
 };
+
 
 export type SiteGroupConnectionMaxArgs = {
   field: SiteFieldSelector;
 };
 
+
 export type SiteGroupConnectionMinArgs = {
   field: SiteFieldSelector;
 };
 
+
 export type SiteGroupConnectionSumArgs = {
   field: SiteFieldSelector;
 };
+
 
 export type SiteGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1932,21 +2048,26 @@ export type SiteFunctionConnection = {
   group: Array<SiteFunctionGroupConnection>;
 };
 
+
 export type SiteFunctionConnectionDistinctArgs = {
   field: SiteFunctionFieldSelector;
 };
+
 
 export type SiteFunctionConnectionMaxArgs = {
   field: SiteFunctionFieldSelector;
 };
 
+
 export type SiteFunctionConnectionMinArgs = {
   field: SiteFunctionFieldSelector;
 };
 
+
 export type SiteFunctionConnectionSumArgs = {
   field: SiteFunctionFieldSelector;
 };
+
 
 export type SiteFunctionConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -1988,21 +2109,26 @@ export type SiteFunctionGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type SiteFunctionGroupConnectionDistinctArgs = {
   field: SiteFunctionFieldSelector;
 };
+
 
 export type SiteFunctionGroupConnectionMaxArgs = {
   field: SiteFunctionFieldSelector;
 };
 
+
 export type SiteFunctionGroupConnectionMinArgs = {
   field: SiteFunctionFieldSelector;
 };
 
+
 export type SiteFunctionGroupConnectionSumArgs = {
   field: SiteFunctionFieldSelector;
 };
+
 
 export type SiteFunctionGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2066,21 +2192,26 @@ export type SitePageConnection = {
   group: Array<SitePageGroupConnection>;
 };
 
+
 export type SitePageConnectionDistinctArgs = {
   field: SitePageFieldSelector;
 };
+
 
 export type SitePageConnectionMaxArgs = {
   field: SitePageFieldSelector;
 };
 
+
 export type SitePageConnectionMinArgs = {
   field: SitePageFieldSelector;
 };
 
+
 export type SitePageConnectionSumArgs = {
   field: SitePageFieldSelector;
 };
+
 
 export type SitePageConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2138,21 +2269,26 @@ export type SitePageGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type SitePageGroupConnectionDistinctArgs = {
   field: SitePageFieldSelector;
 };
+
 
 export type SitePageGroupConnectionMaxArgs = {
   field: SitePageFieldSelector;
 };
 
+
 export type SitePageGroupConnectionMinArgs = {
   field: SitePageFieldSelector;
 };
 
+
 export type SitePageGroupConnectionSumArgs = {
   field: SitePageFieldSelector;
 };
+
 
 export type SitePageGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2216,21 +2352,26 @@ export type SitePluginConnection = {
   group: Array<SitePluginGroupConnection>;
 };
 
+
 export type SitePluginConnectionDistinctArgs = {
   field: SitePluginFieldSelector;
 };
+
 
 export type SitePluginConnectionMaxArgs = {
   field: SitePluginFieldSelector;
 };
 
+
 export type SitePluginConnectionMinArgs = {
   field: SitePluginFieldSelector;
 };
 
+
 export type SitePluginConnectionSumArgs = {
   field: SitePluginFieldSelector;
 };
+
 
 export type SitePluginConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2258,21 +2399,26 @@ export type SitePluginGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type SitePluginGroupConnectionDistinctArgs = {
   field: SitePluginFieldSelector;
 };
+
 
 export type SitePluginGroupConnectionMaxArgs = {
   field: SitePluginFieldSelector;
 };
 
+
 export type SitePluginGroupConnectionMinArgs = {
   field: SitePluginFieldSelector;
 };
 
+
 export type SitePluginGroupConnectionSumArgs = {
   field: SitePluginFieldSelector;
 };
+
 
 export type SitePluginGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2292,21 +2438,26 @@ export type SiteBuildMetadataConnection = {
   group: Array<SiteBuildMetadataGroupConnection>;
 };
 
+
 export type SiteBuildMetadataConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
+
 
 export type SiteBuildMetadataConnectionMaxArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
 
+
 export type SiteBuildMetadataConnectionMinArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
 
+
 export type SiteBuildMetadataConnectionSumArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
+
 
 export type SiteBuildMetadataConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2342,21 +2493,26 @@ export type SiteBuildMetadataGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type SiteBuildMetadataGroupConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
+
 
 export type SiteBuildMetadataGroupConnectionMaxArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
 
+
 export type SiteBuildMetadataGroupConnectionMinArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
 
+
 export type SiteBuildMetadataGroupConnectionSumArgs = {
   field: SiteBuildMetadataFieldSelector;
 };
+
 
 export type SiteBuildMetadataGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2392,21 +2548,26 @@ export type MarkdownRemarkConnection = {
   group: Array<MarkdownRemarkGroupConnection>;
 };
 
+
 export type MarkdownRemarkConnectionDistinctArgs = {
   field: MarkdownRemarkFieldSelector;
 };
+
 
 export type MarkdownRemarkConnectionMaxArgs = {
   field: MarkdownRemarkFieldSelector;
 };
 
+
 export type MarkdownRemarkConnectionMinArgs = {
   field: MarkdownRemarkFieldSelector;
 };
 
+
 export type MarkdownRemarkConnectionSumArgs = {
   field: MarkdownRemarkFieldSelector;
 };
+
 
 export type MarkdownRemarkConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2434,21 +2595,26 @@ export type MarkdownRemarkGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type MarkdownRemarkGroupConnectionDistinctArgs = {
   field: MarkdownRemarkFieldSelector;
 };
+
 
 export type MarkdownRemarkGroupConnectionMaxArgs = {
   field: MarkdownRemarkFieldSelector;
 };
 
+
 export type MarkdownRemarkGroupConnectionMinArgs = {
   field: MarkdownRemarkFieldSelector;
 };
 
+
 export type MarkdownRemarkGroupConnectionSumArgs = {
   field: MarkdownRemarkFieldSelector;
 };
+
 
 export type MarkdownRemarkGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2468,21 +2634,26 @@ export type ImageSharpConnection = {
   group: Array<ImageSharpGroupConnection>;
 };
 
+
 export type ImageSharpConnectionDistinctArgs = {
   field: ImageSharpFieldSelector;
 };
+
 
 export type ImageSharpConnectionMaxArgs = {
   field: ImageSharpFieldSelector;
 };
 
+
 export type ImageSharpConnectionMinArgs = {
   field: ImageSharpFieldSelector;
 };
 
+
 export type ImageSharpConnectionSumArgs = {
   field: ImageSharpFieldSelector;
 };
+
 
 export type ImageSharpConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2510,21 +2681,26 @@ export type ImageSharpGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+
 export type ImageSharpGroupConnectionDistinctArgs = {
   field: ImageSharpFieldSelector;
 };
+
 
 export type ImageSharpGroupConnectionMaxArgs = {
   field: ImageSharpFieldSelector;
 };
 
+
 export type ImageSharpGroupConnectionMinArgs = {
   field: ImageSharpFieldSelector;
 };
 
+
 export type ImageSharpGroupConnectionSumArgs = {
   field: ImageSharpFieldSelector;
 };
+
 
 export type ImageSharpGroupConnectionGroupArgs = {
   skip?: InputMaybe<Scalars['Int']>;
@@ -2532,107 +2708,62 @@ export type ImageSharpGroupConnectionGroupArgs = {
   field: ImageSharpFieldSelector;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>;
+export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type Unnamed_1_Query = { site?: { buildTime?: any | null } | null };
 
-export type GatsbyImageSharpFixedFragment = {
-  base64?: string | null;
-  width: number;
-  height: number;
-  src: string;
-  srcSet: string;
-};
+export type BioQueryQuery = { site?: { siteMetadata?: { author?: { name?: string | null, summary?: string | null } | null, social?: { twitter?: string | null } | null } | null } | null };
 
-export type GatsbyImageSharpFixed_TracedSvgFragment = {
-  tracedSVG?: string | null;
-  width: number;
-  height: number;
-  src: string;
-  srcSet: string;
-};
+export type GetSeoQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type GatsbyImageSharpFixed_WithWebpFragment = {
-  base64?: string | null;
-  width: number;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcWebp?: string | null;
-  srcSetWebp?: string | null;
-};
 
-export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = {
-  tracedSVG?: string | null;
-  width: number;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcWebp?: string | null;
-  srcSetWebp?: string | null;
-};
+export type GetSeoQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, social?: { twitter?: string | null } | null } | null } | null };
 
-export type GatsbyImageSharpFixed_NoBase64Fragment = { width: number; height: number; src: string; srcSet: string };
+export type Get404QueryVariables = Exact<{ [key: string]: never; }>;
 
-export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = {
-  width: number;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcWebp?: string | null;
-  srcSetWebp?: string | null;
-};
 
-export type GatsbyImageSharpFluidFragment = {
-  base64?: string | null;
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  sizes: string;
-};
+export type Get404Query = { site?: { siteMetadata?: { title?: string | null } | null } | null };
 
-export type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: number; maxWidth: number };
+export type GetBlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type GatsbyImageSharpFluid_TracedSvgFragment = {
-  tracedSVG?: string | null;
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  sizes: string;
-};
 
-export type GatsbyImageSharpFluid_WithWebpFragment = {
-  base64?: string | null;
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  srcWebp?: string | null;
-  srcSetWebp?: string | null;
-  sizes: string;
-};
+export type GetBlogIndexQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, description?: string | null } | null }> } };
 
-export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = {
-  tracedSVG?: string | null;
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  srcWebp?: string | null;
-  srcSetWebp?: string | null;
-  sizes: string;
-};
+export type GetUsingTypescriptPageQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type GatsbyImageSharpFluid_NoBase64Fragment = {
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  sizes: string;
-};
 
-export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = {
-  aspectRatio: number;
-  src: string;
-  srcSet: string;
-  srcWebp?: string | null;
-  srcSetWebp?: string | null;
-  sizes: string;
-};
+export type GetUsingTypescriptPageQuery = { site?: { buildTime?: any | null } | null };
+
+export type BlogPostBySlugQueryVariables = Exact<{
+  id: Scalars['String'];
+  previousPostId?: InputMaybe<Scalars['String']>;
+  nextPostId?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type BlogPostBySlugQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, markdownRemark?: { id: string, excerpt?: string | null, html?: string | null, frontmatter?: { title?: string | null, date?: any | null, description?: string | null } | null } | null, previous?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null } | null } | null, next?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null } | null } | null };
+
+export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
+
+export type GatsbyImageSharpFixed_TracedSvgFragment = { tracedSVG?: string | null, width: number, height: number, src: string, srcSet: string };
+
+export type GatsbyImageSharpFixed_WithWebpFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null };
+
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = { tracedSVG?: string | null, width: number, height: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null };
+
+export type GatsbyImageSharpFixed_NoBase64Fragment = { width: number, height: number, src: string, srcSet: string };
+
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = { width: number, height: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null };
+
+export type GatsbyImageSharpFluidFragment = { base64?: string | null, aspectRatio: number, src: string, srcSet: string, sizes: string };
+
+export type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: number, maxWidth: number };
+
+export type GatsbyImageSharpFluid_TracedSvgFragment = { tracedSVG?: string | null, aspectRatio: number, src: string, srcSet: string, sizes: string };
+
+export type GatsbyImageSharpFluid_WithWebpFragment = { base64?: string | null, aspectRatio: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null, sizes: string };
+
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = { tracedSVG?: string | null, aspectRatio: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null, sizes: string };
+
+export type GatsbyImageSharpFluid_NoBase64Fragment = { aspectRatio: number, src: string, srcSet: string, sizes: string };
+
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = { aspectRatio: number, src: string, srcSet: string, srcWebp?: string | null, srcSetWebp?: string | null, sizes: string };
