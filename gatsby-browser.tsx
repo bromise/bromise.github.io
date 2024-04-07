@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 import type { GatsbyBrowser } from 'gatsby';
 
-// custom typefaces
+// Types
 import '@fontsource-variable/montserrat';
 import '@fontsource/merriweather';
-// normalize CSS across browsers
-import './src/normalize.css';
-// custom CSS styles
+
+// CSS
+import './src/assets/styles/global.css'
 import './src/style.css';
 
 // Highlighting for code blocks
