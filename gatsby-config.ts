@@ -18,6 +18,7 @@ const config: GatsbyConfig = {
         fileName: `./gatsby-graphql.ts`,
       },
     },
+    'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -17,12 +17,12 @@ const Layout = ({ location, title, children }: Props) => {
         <div className={'mb-2'}>
           {isRootPath ? (
             <h1>
-              <Link className="text-5xl text-sky-600 hover:underline" to="/">
+              <Link className="text-5xl" to="/">
                 {title}
               </Link>
             </h1>
           ) : (
-            <Link className="text-3xl text-sky-600 hover:underline" to="/">
+            <Link className="text-3xl" to="/">
               {title}
             </Link>
           )}
