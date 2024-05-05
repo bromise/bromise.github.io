@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <article className="blog-post" itemScope itemType="http://schema.org/Article">
+      <article className="prose" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter?.title}</h1>
           <p>{post.frontmatter?.date}</p>
@@ -28,16 +28,8 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+      <nav>
+        <ul className={'flex flex-wrap justify-between list-none p-0'}>
           <li>
             {previous && (
               <Link to={previous.fields?.slug || ''} rel="prev">
